@@ -14,6 +14,17 @@ pipeline {
                 sh 'echo "Building"'
             }
         }
+        stage('Unit Tests') {
+            agent {
+                docker {
+                    image 'qnib/pytest'
+                }
+            }
+            steps {
+                sh 'echo "Testing"'
+                sh 'py.test tests/test_unit.py'
+            }
+        }
     }
     post {
         always {

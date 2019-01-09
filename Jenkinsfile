@@ -25,6 +25,28 @@ pipeline {
                 sh 'py.test tests/test_unit.py'
             }
         }
+        stage('Integration Tests') {
+            agent {
+                docker {
+                    image 'qnib/pytest'
+                }
+            }
+            steps {
+                sh 'echo "Testing"'
+                sh 'py.test tests/test_integration.py'
+            }
+        }
+        stage('Documentation Tests') {
+            agent {
+                docker {
+                    image 'qnib/pytest'
+                }
+            }
+            steps {
+                sh 'echo "Testing"'
+                sh 'py.test tests/test_documentation.py'
+            }
+        }
     }
     post {
         always {

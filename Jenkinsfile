@@ -51,6 +51,7 @@ pipeline {
     post {
         always {
             echo 'This will always run'
+            archiveArtifacts artifacts: 'coverage.xml', onlyIfSuccessful: true
         }
         success {
             echo 'This will run only if successful'

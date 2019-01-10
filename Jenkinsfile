@@ -22,7 +22,7 @@ pipeline {
             }
             steps {
                 sh 'echo "Testing"'
-                sh 'py.test test/test_unit.py'
+                sh 'py.test --cov=. test/test_unit.py'
             }
         }
         stage('Integration Tests') {

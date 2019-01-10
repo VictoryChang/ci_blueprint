@@ -22,7 +22,7 @@ pipeline {
             }
             steps {
                 sh 'echo "Testing"'
-                sh 'py.test --cov=. tests/test_unit.py'
+                sh 'py.test --cov=. --cov-report xml tests/test_unit.py '
             }
         }
         stage('Integration Tests') {

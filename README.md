@@ -5,5 +5,6 @@ Docker Install
 Jenkins Install
 docker build -t myimage:latest .
 docker images
+Trigger
 
 
